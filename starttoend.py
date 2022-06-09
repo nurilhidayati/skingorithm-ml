@@ -118,12 +118,12 @@ def load_models(fs_dict, ac_dict, bs_dict, wr_dict, ea_dict, pe_dict):
 if __name__ == "__main__":
     # Load Model
 
-    fspath = './modelML/skin_ResUnet.h5'
-    acpath = './modelML/acne_ResUnet.h5'
-    bspath = './modelML/flek_ResUnet.h5'
-    wrpath = './modelML/wrinkles_ResUnet.h5'
-    eapath = './modelML/eye_ResUnet.h5'
-    pepath = './modelML/panda_ResUnet.h5'
+    fspath = 'gs://bucket-model-ml/skin_ResUnet.h5'
+    acpath = 'gs://bucket-model-ml/acne_ResUnet.h5'
+    bspath = 'gs://bucket-model-ml/flek_ResUnet.h5'
+    wrpath = 'gs://bucket-model-ml/wrinkles_ResUnet.h5'
+    eapath = 'gs://bucket-model-ml/eye_ResUnet.h5'
+    pepath = 'gs://bucket-model-ml/panda_ResUnet.h5'
     FS_model, AC_model, BS_model, WR_model, EA_model, PE_model = load_models(fspath, acpath, bspath, wrpath, eapath, pepath)
 
     app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 8080)))
